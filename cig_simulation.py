@@ -1,3 +1,8 @@
+"""Planning simulation for the Configuration Information Gain (CIG) test.
+
+Usage: python cig_simulation.py [replicates_per_setting]   (default 150, Figure 2 used 200)
+Writes results.json. See README.md for the design.
+"""
 import numpy as np, json, time, sys
 rng=np.random.default_rng(11)
 def irls(X,y,it=8):
@@ -59,4 +64,4 @@ for name,pa,pb in scen:
             k=f"{name}_{n}_{gm}"
             res[k]=dict(boot=float((a[:,0]<0.05).mean()),perm=float((a[:,1]<0.05).mean()),lrt=float((a[:,2]<0.05).mean()),pcr=float(a[:,3].mean()),R=R)
             print(k,res[k],round(time.time()-t),flush=True)
-json.dump(res,open('/tmp/claude-0/-home-claude/b3f81ece-5cac-5452-b51c-d5e3b06ec265/scratchpad/sim/res2.json','w'),indent=1)
+json.dump(res,open('results.json','w'),indent=1)
