@@ -1,6 +1,6 @@
 # BCRP Preliminary: Planning Simulation for the CIG Test
 
-Code and results behind Figure 2 of the Project Narrative for the FY26 DoD BCRP Breakthrough Award (Level 1) application *Decoding Tumor–Immune Interactions Underlying Breast Cancer Treatment Response and Resistance* (PIs Sangeetha Prabhakaran, University of New Mexico, and Vijayalakshmi Saravanan, University of Texas at Tyler).
+Code and results for the planning simulation described in Aim 2 of the Project Narrative for the FY26 DoD BCRP Breakthrough Award (Level 1) application *Decoding Tumor–Immune Interactions Underlying Breast Cancer Treatment Response and Resistance* (PIs Sangeetha Prabhakaran, University of New Mexico, and Vijayalakshmi Saravanan, University of Texas at Tyler).
 
 The simulation evaluates the statistical test for **Configuration Information Gain (CIG)**, the held-out deviance reduction obtained by adding a tumor-by-immune configuration term to an additive model of pathologic complete response (pCR). It uses simulated data only. No patient data are included.
 
@@ -9,8 +9,8 @@ The simulation evaluates the statistical test for **Configuration Information Ga
 | File | Purpose |
 |---|---|
 | `cig_simulation.py` | Runs the simulation and writes `results.json` |
-| `results.json` | Results used for Figure 2 (200 simulated cohorts per setting) |
-| `make_figure2.py` | Builds the pgfplots source of Figure 2 (`figure2.tex`) from `results.json` |
+| `results.json` | Simulation results (200 simulated cohorts per setting) |
+| `make_figure2.py` | Builds a calibration and power figure (`figure2.tex`) from `results.json` |
 
 ## Design
 
